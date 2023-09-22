@@ -6,7 +6,7 @@ const MENU = [
     {id: 2, ingredient: 'mozza'}
 ];
 
-router.get('/', (req, res, next) => {
+router.get('/', function(req, res, next) {
     res.json(MENU);
 });
 
