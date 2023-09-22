@@ -15,8 +15,8 @@ const MOVIES = [
     }
 ]
 
-router.get('/', function(req, res,next) {
-    res.json(MOVIES);
+router.get('/', function(req, res) {
+    return res.json(MOVIES);
 });
 
 module.exports = router;
