@@ -1,0 +1,10 @@
+### create a movie
+POST http://localhost:3000/films
+Content-Type: application/json
+
+{
+    "title": "Les seigneurs des anneaux",
+    "duration": 220,
+    "budget": 50000000,
+    "link": "https://www.imdb.com/title/tt0120737/"
+}
