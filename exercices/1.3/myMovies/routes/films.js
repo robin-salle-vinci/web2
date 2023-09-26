@@ -17,12 +17,12 @@ const MOVIES = [
 
 
 router.get('/', function(req, res) {
-    const filter = req?.query['minimum-duration'] > 0 ? req.query['minimum-duration'] : undefined;
+    const filter = req?.query['minimum-duration'] ? Number(req.query['minimum-duration']) : undefined;
 
     console.log(filter);
     
     if(filter === undefined) {
-       res.json(MOVIES);
+       res.json();
     };
 
     let filteredMovies = MOVIES.filter((movie) => movie.duration >= filter);
