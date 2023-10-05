@@ -54,7 +54,8 @@ Content-Type: application/json
 }
 
 ### Read film with ID == 1
-GET {{baseUrl}}/films/2
+GET {{baseUrl}}/films/1
+
 
 ### Read film which does not exist
 GET {{baseUrl}}/films/500

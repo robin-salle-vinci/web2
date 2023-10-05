@@ -1,9 +1,10 @@
 const express = require('express');
+const path = require('node:path');
 const { serialize, parse } = require('../utils/json');
 
 const router = express.Router();
 
-const jsonDbPath = `${__dirname  }/../data/films.json`;
+const jsonDbPath = path.join(__dirname, '/../data/films.json');
 
 const MOVIES = [
     {
@@ -47,8 +48,9 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
 
     const films = parse(jsonDbPath, MOVIES);
+    const idInRequest = parseInt(req.params.id,10);
 
-    const indexOfFilmFound = films.findIndex((film) => film.id === req.params.id);
+    const indexOfFilmFound = films.findIndex((film) => film.id === idInRequest);
 
     if (indexOfFilmFound < 0) {
         return res.sendStatus(404);
@@ -96,8 +98,9 @@ router.post('/', (req, res) => {
 router.delete('/:id', (req,res) => {
 
     const films = parse(jsonDbPath, MOVIES);
+    const idInRequest = parseInt(req.params.id,10);
 
-    const indexOfFilmFound = films.findIndex((film) => film.id === req.params.id);
+    const indexOfFilmFound = films.findIndex((film) => film.id === idInRequest);
 
     if(indexOfFilmFound < 0) {
         return res.sendStatus(404);
@@ -126,7 +129,9 @@ router.patch('/:id', (req,res) => {
 
     const films = parse(jsonDbPath, MOVIES);
 
-    const indexOfFilmFound = films.findIndex((film) => film.id === req.params.id);
+    const idInRequest = parseInt(req.params.id,10);
+
+    const indexOfFilmFound = films.findIndex((film) => film.id === idInRequest);
 
     if(indexOfFilmFound < 0) {
         return res.sendStatus(404);
