@@ -167,9 +167,9 @@ router.put('/:id', (req,res) => {
 
         const films = parse(jsonDbPath, MOVIES);
         
-        const {id} = req.params;
+        const id = parseInt(req.params.id, 10);
         
-        const indexOfFilmFound = films.findIndex((film) => film.id === req.params.id);
+        const indexOfFilmFound = films.findIndex((film) => film.id === id);
 
     if(indexOfFilmFound < 0) {
         const newFilm = {id, title, link, duration, budget }
