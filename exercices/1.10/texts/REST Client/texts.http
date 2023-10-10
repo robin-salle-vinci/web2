@@ -7,16 +7,19 @@ GET http://localhost:3000/texts
 @baseUrl = http://localhost:3000
 GET {{baseUrl}}/texts/?level=medium
 
-### Read text identified by e78da274-1042-4260-ad24-09ad76edafd4
-GET {{baseUrl}}/texts/e78da274-1042-4260-ad24-09ad76edafd4
+### Read text identified by 5967a786-b871-406e-a9af-8b601aa8a4d5
+GET {{baseUrl}}/texts/5967a786-b871-406e-a9af-8b601aa8a4d5
 
-### Create a pizza
-POST {{baseUrl}}/pizzas
+
+
+
+### Create a text
+POST {{baseUrl}}/texts
 Content-Type: application/json
 
 {
-    "title":"Magic Green",
-    "content":"Epinards, Brocolis, Olives vertes, Basilic"
+    "content":"Epinards, Brocolis, Olives vertes, Basilic",
+    "level": "easy"
 }
 
 ### Delete pizza identified by 2
