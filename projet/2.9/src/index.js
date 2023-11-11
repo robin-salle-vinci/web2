@@ -6,9 +6,6 @@ const divHTML = document.querySelector('#divGenericHTML');
 
 renderHomePageDefault();
 
-const buttomRules = document.querySelector('#buttomRules');
-buttomRules.addEventListener('click',renderHomePageWithRules);
-
 function renderHomePageDefault() {
     divHTML.innerHTML = `<body>
     <nav class="navbar navbar-expand-sm navbar-light" style="background-color: blueviolet;">
@@ -38,7 +35,7 @@ function renderHomePageDefault() {
 
     <main>
     <div class="mt-2 pb-5" style="background-image: url('${backGround}'); height: 85vh; background-repeat: no-repeat; background-position: center center; background-size: contain;">
-      <div class="align-middle text-black text-center" style="padding-top: 80px;">
+      <div class="align-middle text-black text-center" style="padding-top: 6%;">
         <div class="d-flex justify-content-center">
           <a class="link-opacity-100" href="#" id="buttomRules">Règles du jeu</a>
         </div>
@@ -52,7 +49,9 @@ function renderHomePageDefault() {
     <footer class="fixed-bottom" style="background-color: blueviolet;">
       <div class="text-center">Robin, Mario, Jason, Joachim</div>
     </footer>
-  </body>`
+  </body>`;
+  const buttomRules = document.querySelector('#buttomRules');
+  buttomRules.addEventListener('click',renderHomePageWithRules);
 };
 
 function renderHomePageWithRules () {
@@ -65,7 +64,12 @@ function renderHomePageWithRules () {
     remporter la partie !
   </p>
   </div>
+  <div class=" container-fluid d-flex justify-content-center pt-5 pb-3">
+  <a class="link-opacity-100" href="#" id="buttomBack">BACK TO HOME</a>
+  </div>
   `;
+  const buttomBack = document.querySelector('#buttomBack');
+  buttomBack.addEventListener('click',renderHomePageDefault);
 };
 
  
