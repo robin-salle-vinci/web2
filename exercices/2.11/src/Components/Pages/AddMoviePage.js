@@ -1,5 +1,5 @@
 import Navigate from "../Router/Navigate";
-import { addOneMovie } from '../../movie';
+import { addOneMovie } from '../../models/movie';
 
 const AddMoviePage = () => {
   renderAddMoviePage();

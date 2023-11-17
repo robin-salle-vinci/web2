@@ -1,5 +1,5 @@
 // import { clearPage } from '../../utils/render';
-import { readAllMovies } from '../../movie';
+import { readAllMovies } from '../../models/movie';
 
 const ViewMoviePage = () => {
     renderViewMoviePage();
