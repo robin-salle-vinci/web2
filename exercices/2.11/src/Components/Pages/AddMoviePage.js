@@ -1,5 +1,12 @@
+import { clearPage } from "../../utils/render";
+
 const AddMoviePage = () => {
-    const main = document.querySelector('main');
+  clearPage();
+  renderAddMoviePage();
+}
+
+function renderAddMoviePage () {
+  const main = document.querySelector('main');
     main.innerHTML = `<div class="text-center">
     <h3>page d'ajout film</h3>
     </div>
@@ -25,9 +32,6 @@ const AddMoviePage = () => {
     </form>
     </div>
     `;
-
-    const form
-    
 }
 
 export default AddMoviePage;
