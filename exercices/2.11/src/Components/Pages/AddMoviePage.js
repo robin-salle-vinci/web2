@@ -1,10 +1,7 @@
-import { clearPage } from "../../utils/render";
 import Navigate from "../Router/Navigate";
-
-const MOVIES = [];
+import { addOneMovie } from '../../movie';
 
 const AddMoviePage = () => {
-  clearPage();
   renderAddMoviePage();
   renderInputForm();
 }
@@ -56,7 +53,7 @@ function addMovie (e) {
     budget,
     description
   }
-  MOVIES.push(movie);
+  addOneMovie(movie);
   // eslint-disable-next-line no-console
   console.log(movie);
   Navigate('/view');
