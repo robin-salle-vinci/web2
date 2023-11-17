@@ -1,4 +1,5 @@
 import { clearPage } from "../../utils/render";
+import Navigate from "../Router/Navigate";
 
 const MOVIES = [];
 
@@ -49,15 +50,16 @@ function addMovie (e) {
   const budget = document.getElementById('budgetMovie').value;
   const description = document.getElementById('descriptionMovie').value;
 
-const movie = {
-  title,
-  duration,
-  budget,
-  description
-}
-MOVIES.push(movie);
-// eslint-disable-next-line no-console
-console.log(movie);
+  const movie = {
+    title,
+    duration,
+    budget,
+    description
+  }
+  MOVIES.push(movie);
+  // eslint-disable-next-line no-console
+  console.log(movie);
+  Navigate('/view');
 }
 
 export default AddMoviePage;
