@@ -13,14 +13,18 @@ const Navbar = () => {
   const navbar = `
 <nav class="navbar navbar-expand-sm navbar-light">
 
-<div class="nav nav-underline container-fluid d-flex justify-content-start ps-5">
-    <a class="nav-link" href="#" data-uri="/">Accueil</a>
-</div>
+  <div class="d-flex justify-content-between w-100 pt-3">
 
-<div class="nav nav-underline container-fluid d-flex justify-content-end pe-5">
-    <a class="nav-link" href="#">Se connecter</a>
-    <a class="nav-link" href="#">S'inscrire</a>
-</div>
+    <div class="nav nav-underline ps-5">
+      <a class="nav-link" style="font-size: 20px" href="#" data-uri="/">Accueil</a> 
+    </div>
+
+    <div class="nav nav-underline pe-5">
+      <a class="nav-link" style="font-size: 20px" href="#" data-uri="">Se connecter</a>
+      <a class="nav-link" style="font-size: 20px" href="#" data-uri="">S'inscrire</a>
+    </div>
+
+  </div>
 
 </nav>
   `;
