@@ -1,0 +1,11 @@
+######### NORMAL OPERATION  ###########
+
+### Read all texts
+GET http://localhost:3000/scores
+
+### Read all scores
+@baseUrl = http://localhost:3000
+GET {{baseUrl}}/scores
+
+### Read scores identified by 1
+GET {{baseUrl}}/scores/1
