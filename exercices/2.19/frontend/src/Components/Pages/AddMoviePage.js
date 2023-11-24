@@ -1,14 +1,14 @@
-import Navigate from "../Router/Navigate";
-import { addOneMovie } from '../../models/movie';
+import Navigate from '../Router/Navigate';
+import {addOneMovie} from '../../models/movie';
 
 const AddMoviePage = () => {
   renderAddMoviePage();
   renderInputForm();
-}
+};
 
-function renderAddMoviePage () {
+function renderAddMoviePage() {
   const main = document.querySelector('main');
-    main.innerHTML = `<div class="text-center">
+  main.innerHTML = `<div class="text-center">
     <h3>page d'ajout film</h3>
     </div>
     <div style="height: 50px;"></div>
@@ -35,27 +35,33 @@ function renderAddMoviePage () {
     `;
 }
 
-function renderInputForm () {
+function renderInputForm() {
   const form = document.querySelector('form');
-  form.addEventListener('submit',addMovie);
+  form.addEventListener('submit', addMovie);
 }
 
-function addMovie (e) {
+function addMovie(e) {
   e.preventDefault(); // pour empêcher que la page se reload
   const title = document.getElementById('titleMovie').value;
-  const duration = document.getElementById('durationMovie').value;
-  const budget = document.getElementById('budgetMovie').value;
-  const description = document.getElementById('descriptionMovie').value;
+  const duration = parseInt(document.getElementById('durationMovie').value, 10);
+  const budget = parseInt(document.getElementById('budgetMovie').value, 10);
+  const link = document.getElementById('descriptionMovie').value;
 
-  const movie = {
-    title,
-    duration,
-    budget,
-    description
-  }
-  addOneMovie(movie);
-  // eslint-disable-next-line no-console
-  console.log(movie);
+  const options = {
+    method: 'POST',
+    body: JSON.stringify({
+      title,
+      duration,
+      budget,
+      link,
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+  
+  addOneMovie(options);
+
   Navigate('/view');
 }
 

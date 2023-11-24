@@ -8,6 +8,11 @@ async function getAllMovies() {
     console.error('getAllPizzas::error: ', err);
     throw err;
   }
-}
+};
 
-export default getAllMovies;
+async function addOneMovie(options) {
+    const response = await fetch('/api/films', options); // fetch return a promise => we wait for the response
+    if (!response.ok) throw new Error(`fetch error : ${response.status} : ${response.statusText}`);
+};
+
+export { getAllMovies, addOneMovie };
