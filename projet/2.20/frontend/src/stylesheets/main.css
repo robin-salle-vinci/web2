@@ -1,0 +1,21 @@
+.responsive-background-color {
+    background-color: lightblue;
+    @media (min-width: 992px) {
+      background-color: white;
+    }
+  }
+
+  body.dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
+  }
+  
+  body.dark-mode .modal{
+    color:black;
+  }
+  
+  header.dark-mode{
+    background-color: #222;
+  }
+  
+  /* button within a body that has the class dark-mode */ 
