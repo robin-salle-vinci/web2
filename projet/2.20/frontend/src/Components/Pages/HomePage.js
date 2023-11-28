@@ -1,4 +1,5 @@
 import { clearPage } from '../../utils/render';
+import PrivacyPolicy from '../privacyAccord';
 
 const HomePage = () => {
   clearPage();
@@ -7,7 +8,9 @@ const HomePage = () => {
 
 function renderHomePage() {
   const main = document.querySelector('main');
-  main.innerHTML = `<div class="mt-2 pb-5">
+  main.innerHTML = `
+  <div id="privacyPolicyWrapper"></div>
+  <div class="mt-2 pb-5">
   <div class="container-fluid d-flex justify-content-center" style="padding-top: 5%;">
     <h1 class="text-center text-primary display-1">
       Trivial Vinci
@@ -38,6 +41,8 @@ function renderHomePage() {
   </div>
 </div>
   `;
+
+  PrivacyPolicy();
 };
 
 export default HomePage;
